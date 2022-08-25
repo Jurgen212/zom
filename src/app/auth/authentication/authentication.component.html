@@ -5,7 +5,7 @@
 
 	<div class="form-container sign-up-container">
 
-		<form action="#">
+		<form [formGroup]="registerForm">
 			<h1>Crear cuenta</h1>
 
 			<div class="social-container">
@@ -15,10 +15,10 @@
 			</div>
 
 			<span>o utiliza tu correo para registrarte</span>
-			<input type="text" placeholder="Nombre" />
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
-			<button (click)="animationMovement( 0 )">Registrarme</button>
+			<input formControlName="name" 		type="text" placeholder="Nombre" autocomplete="on"/>
+			<input formControlName="email"		type="email" placeholder="Correo" autocomplete="on"/>
+			<input formControlName="password"	type="password" placeholder="Contraseña" />
+			<button (click)="animationMovement( 0 )" (click)="register()">Registrarme</button>
 		</form>
 
 	</div>
@@ -26,7 +26,7 @@
 
 	<div class="form-container sign-in-container">
 
-		<form action="#">
+		<form [formGroup]="loginForm">
 			<h1>Iniciar sesion</h1>
 
 			<div class="social-container">
@@ -36,9 +36,13 @@
 			</div>
 
 			<span>o utiliza tu cuenta</span>
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
-			<button (click)="animationMovement( 1 )">iniciar sesion</button>
+
+
+			<input formControlName="email" type="email" placeholder="Correo" autocomplete="on"/>
+			<input formControlName="password" type="password" placeholder="Contraseña" autocomplete="on" />
+
+
+			<button (click)="animationMovement( 1 )" (click)="login()">iniciar sesion</button>
 		</form>
 
 	</div>
