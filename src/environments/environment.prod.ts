@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  userBaseUrl: "https://backend-social-net.herokuapp.com/"
 };
