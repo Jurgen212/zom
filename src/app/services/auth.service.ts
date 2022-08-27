@@ -21,6 +21,11 @@ export class AuthService {
     return this.http.post< GetUser >( `${ this.userBaseUrl }api/login`, body );
   };
 
+  getUserById( id: string ): Observable< GetUser >{
+    
+    return this.http.get< GetUser >( `${ this.userBaseUrl }api/login`  );
+  };
+
   //Get users
   getUsers(): Observable< GetUsers >{
     return this.http.get< GetUsers >( `${ this.userBaseUrl }api/usuarios`);
