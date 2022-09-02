@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactsComponent } from './contacts/contacts.component';
+import { RoomComponent } from './room/room.component';
+import { VideoRoomComponent } from './video-room/video-room.component';
 
 
 const routes: Routes = [{
   path:'',
   children: [
-    { path: 'contacts', component :   ContactsComponent },
-    { path: '**'      , redirectTo:   'contacts'        }
+    { path: 'video'   , component :   VideoRoomComponent},
+    { path: 'room'          , component :   RoomComponent     },
+    { path: '**'            , redirectTo:   'contacts'        }
   ]
 }];
 

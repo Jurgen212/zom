@@ -28,3 +28,6 @@ export interface sendUser{
     correo  : string;
     password: string;
 }
+
+
+  
