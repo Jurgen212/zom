@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxAgoraModule } from 'ngx-agora';
 import { environment } from '../environments/environment.prod';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -17,10 +18,11 @@ import { environment } from '../environments/environment.prod';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgxAgoraModule.forRoot({ AppID: environment.appIdAgora })
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

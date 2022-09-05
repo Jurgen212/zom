@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module')            .then( m  => m.AuthModule     )
   },
   {
-    path: 'videoCall',
-    loadChildren: () => import('./video-call/video-call.module').then( m  => m.VideoCallModule )
-  },
-  {
     path: '**',
     redirectTo: 'home'
   }

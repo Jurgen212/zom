@@ -1,4 +1,10 @@
 <p>main works!</p>
 <a routerLink="/auth">Ir a auth</a>
 <br>
-<a routerLink="/videoCall/room">Ir a escoger room</a>
+
+<form [formGroup]="roomNameForm">
+
+    <input  formControlName="roomName"  placeholder="Ingrese nombre de sala">
+    <button (click)="sendRoom()">Ingresar</button>
+</form>
+
