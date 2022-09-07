@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   userBaseUrl: "https://backend-social-net.herokuapp.com/",
+  agoraUrl: "https://zumo.netlify.app/index.html?room="
 };
 
 /*

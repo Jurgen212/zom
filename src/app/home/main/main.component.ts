@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-main',
@@ -22,7 +23,7 @@ export class MainComponent implements OnInit {
 
   sendRoom(){
     console.log( this.roomNameForm.value.roomName );
-    this.win = window.open(`http://127.0.0.1:5500/Zum/index.html?room=${ this.roomNameForm.value.roomName }`, '_blank')!;    
+    this.win = window.open(`${ environment.agoraUrl }${ this.roomNameForm.value.roomName }`, '_blank')!;    
     this.win.focus();
   }
 }
