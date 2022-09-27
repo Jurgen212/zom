@@ -23,7 +23,8 @@ export class MainComponent implements OnInit {
 
   sendRoom(){
     console.log( this.roomNameForm.value.roomName );
-    this.win = window.open(`${ environment.agoraUrl }${ this.roomNameForm.value.roomName }`, '_blank')!;    
+    console.log(`${ localStorage.getItem("path1") }/index.html?room=${ this.roomNameForm.value.roomName }`)
+    this.win = window.open(`${ localStorage.getItem("path1") }/index.html?room=${ this.roomNameForm.value.roomName }`, '_blank')!;    
     this.win.focus();
   }
 }
